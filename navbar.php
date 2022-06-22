@@ -1,14 +1,14 @@
 	<a class="active" href="/">Home</a>
-	<a href="/aboutjudo">About Judo</a>
-	<a href="/instructors">Instructors</a>
-	<a href="/calendar">Calendar</a>
+	<a href="/aboutjudo.php">About Judo</a>
+	<a href="/instructors.php">Instructors</a>
+	<a href="/calendar.php">Calendar</a>
 	<!--a href="/news.html">News</a-->
 	<!--a href="/documents">Documents</a-->
 	<!--a href="/events.html">Events</a-->
-	<a href="/photos.html">Photos</a>
-	<a href="/morephotos.html">More Photos</a>
-	<a href="/contact">Contact Us</a>
-	<a href="/subscribe">Subscribe</a>
+	<a href="/photos.php">Photos</a>
+	<a href="/morephotos.php">More Photos</a>
+	<a href="/contact.php">Contact Us</a>
+	<a href="/subscribe.php">Subscribe</a>
 	<a href="" onclick="ToggleDarkMode()">Toggle Dark Mode</a>
 	<a href="#" onclick="toggleTopNav()" class="icon">☰</a>
 	<script>
