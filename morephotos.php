@@ -10,9 +10,6 @@
 		<script src="https://kit.fontawesome.com/8e00593c4c.js" crossorigin="anonymous"></script>
 		<script> 
 			$(function(){
-			  $("#includedContent").load("navbar.html"); 
-			});
-			$(function(){
 			  $("#photos").load("morephotostemplate.html"); 
 			});
 		</script> 
