@@ -8,20 +8,6 @@
 		<link rel="stylesheet" href="public/style.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://kit.fontawesome.com/8e00593c4c.js" crossorigin="anonymous"></script>
-		<script> 
-			const monthnum = new Date().getUTCMonth();
-			$(function(){
-				$("#includedContent").load("navbar.html"); 
-			  	
-				if (!(monthnum == 11)) {
-					$("#eventmessage").css({
-						"visibility":"collapse",
-						"width":"0px",
-						"height":"0px"
-					})
-				}
-			});
-		</script> 
 		<title>Hogosha Judo</title>
 	</head>
 	<body style="text-align: center;">
@@ -37,7 +23,8 @@
 		
 		<!--h1>Hogosha Judo</h1-->
 
-		<div class="eventmessage" id="eventmessage">
+		<div class="eventmessage" id="eventmessage" 
+			style="<?php echo (date('m') == 12) ? "" : "visibility: collapse; width: 0px; height: 0px;" ?>">
 			<img src="images/happyholidays.png">
 		</div>
 
