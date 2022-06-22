@@ -5,12 +5,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-		<link rel="stylesheet" href="public/style.css">
+		<link rel="stylesheet" href="style.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://kit.fontawesome.com/8e00593c4c.js" crossorigin="anonymous"></script>
 		<title>Hogosha Judo</title>
 	</head>
-	<body>
+	<body style="text-align: center;">
 		<div id="includedContent" class="topnav">
 			<?php 
 				$myfile = fopen("navbar.php", "r") or die("Unable to load navbar!");
@@ -18,18 +18,27 @@
 				fclose($myfile);
 			?>
 		</div>
-		<div id="photos">
-			<?php
-				$images = scandir("./morephotos/");
-				for ($i = 2; $i < count($images); $i++) {
-					$image_name = $images[$i];
-					$image_info = getimagesize("morephotos/" . $image_name);
-					$width = $image_info[0];
-					$height = $image_info[1];
-					echo "<img class='photosimg' width='$width' ";
-					echo "src='morephotos/$image_name' alt='$image_name'>";
-				}
-			?>
-		</div>
+
+		<br>
+
+		<h1>Hogosha Judo / Third Heaven Martial Arts</h1>
+
+		<i class="fas fa-phone-alt"></i>
+		<a href="tel:920-319-0439" class="normlink">(920) 319-0439</a>
+
+		<br>
+		
+		<i class="fas fa-map-marker-alt"></i>
+		1229 Madison Street Beaver Dam, WI 53916
+
+		<hr class="thr">
+
+		<h1>Contact Information:</h1>
+
+		<h2>Darlene Cypert - Head Instructor</h2>
+		<a href="tel:920-296-6452" class="normlink">(920) 296-6452</a>
+			
+		<h2>Jerry L. Cypert - Supervising Instructor</h2>
+		<a href="tel:920-296-6451" class="normlink">(920) 296-6451</a>
 	</body>
 </html>
