@@ -1,0 +1,297 @@
+:root {
+    --main-bg-color: #0e151a; /* #121212 */
+	--secondary-bg-color: #ffffff; /* #ffffff */
+    --primary-color: #6290b3; /* #BB86FC */
+    --primary-color-variant: #7da0c0; /* #3700B3 */
+    --primary-variant-hover: #a2aeba; /* #3f02ce */
+    --secondary-color: #7dc0bc; /* #03DAC5 */
+    --error-color: #c07d7d; /* #CF6679 */
+	--light-mode-color: white;
+	--light-mode-color-variant: var(--primary-variant-hover);
+}
+
+a, a:visited {
+    background-color: var(--primary-color-variant, royalblue);
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: solid;
+    display: inline-block;
+    border: 0.5px solid black;
+}
+
+.primary {
+    color: var(--primary-color);
+}
+
+.primary_variant {
+    color: var(--primary-color-variant);
+}
+
+.secondary {
+    color: var(--secondary-color);
+}
+
+.error {
+    background-color: var(--error-color);
+    color: black;
+}
+
+a:hover {
+    background-color: var(--primary-variant-hover, cornflowerblue);
+}
+
+#inst1 {
+	border: 5px solid var(--secondary-color);
+}
+
+p, h1 {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	color: var(--primary-color);
+}
+
+.indent p, .indent h1 {
+	margin-top: 15px;
+  	margin-bottom: 15px;
+  	margin-right: 150px;
+	margin-left: 80px;
+}
+
+body, html {
+	background-color: var(--main-bg-color);
+	color: var(--primary-color);
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+figure, figure p {
+	padding: 0px;
+	background: #eee;
+	border-radius: 5px;
+	width: fit-content;
+	font-size: x-large;
+	margin: 0 auto;
+	text-align: center;
+	color: var(--primary-color-variant);
+}
+
+b {
+	color: coral;
+}
+
+.strikeout {
+	color: var(--primary-color);
+	line-height: 1px;
+	position: relative;
+}
+
+.thr {
+	width: 75%;
+	margin: 1 auto;
+}
+
+.strikeout::after {
+	border-bottom: 0.15em solid red;
+	content: "";
+	left: 0;
+	margin-top: calc(0.125em / 2 * -1);
+	position: absolute;
+	right: 0;
+	top: 50%;
+}
+
+.normlink {
+	background-color: revert !important;
+    color: var(--primary-color) !important;
+	padding: revert;
+    text-align: revert;
+    text-decoration: revert;
+    display: revert;
+    border: revert;
+}
+
+.photosimg {
+	width: 100%;
+	max-width: 600px;
+}
+/*
+.topnav {
+	height: auto;
+	width: auto;
+}
+*/
+/* Add a black background color to the top navigation */
+.topnav/*div*/ {
+	background-color: var(--main-bg-color);
+	overflow: hidden;
+}
+
+#includedcontent.topnav {
+	height: fit-content;
+	overflow: visible;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+	background-color: var(--primary-variant-hover);
+}
+  
+/* Add a color to the active/current link */
+.topnav a.active {
+	background-color: #04AA6D;
+	color: white;
+}
+
+.topnav .icon {
+	display: none;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.lightmode {
+	background-color: var(--light-mode-color);
+	color: var(--main-bg-color);
+}
+
+.center {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	padding: 10px;
+}
+
+@media (min-width: 600px) {
+	.regimg {
+		width: auto;
+		height: auto;
+	}
+	.logo {
+		object-fit: cover; 
+		object-position: 90% 10%;
+	}
+	.parallax {
+		/*background-image: url("images/Hiki-otoshi.jpg");*/
+	
+		min-height: 600px;
+		min-width: 100%;
+	
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
+	.container {
+		display: flex;
+	}
+	.calander {
+		width: 75%;
+		height: 600px;
+		border: solid 1px #777;
+	}
+	
+	.events {
+		width: 25%;
+		height: 600px;
+		border: solid 1px #777;
+	}
+	.hideonvertical {
+		visibility: hidden;
+	}
+	.eventmessage div img{
+		src: url("images/happyholidays.png");
+		background-repeat: no-repeat;
+		height: 100%;
+		margin: 0 auto;
+	}
+
+}
+
+@media screen and (max-width: 600px) {
+	.topnav a:not(:first-child) {display: none;}
+  	.topnav a.icon {
+    	float: right;
+    	display: block;
+		height: fit-content;
+  	}
+}
+
+@media (max-width: 600px) {
+	.regimg {
+		width: 100%;
+		height: auto;
+		padding-right: 10px;
+	}
+	.logo {
+		object-fit: cover; 
+		object-position: 90% 10%;
+		width: 50%;
+		height: 50%;
+	}
+	.parallax {
+		/*background-image: url("images/Hiki-otoshi.jpg");*/
+	
+		min-height: 150px;
+		min-width: 100%;
+	
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
+	.container {
+		display: inline;
+	}
+	.calander {
+		width: max-content;
+		height: 600px;
+		border: solid 1px #777;
+	}
+	
+	.events {
+		visibility: hidden;
+		width: fit-content;
+		height: 600px;
+		border: solid 1px #777;
+	}
+	.hideonvertical {
+		visibility: visible;
+	}
+	div.eventmessage img{
+		background-repeat: no-repeat;
+		height: 75%;
+		max-width: min-content;
+		width: 75%;
+	}
+	
+	.topnav/*div*/.showtopnav {
+		position: relative;
+		/*
+		height: 0px;
+		width: 0px;
+		visibility: collapse;
+		overflow: hidden;
+		display: none;
+		*/
+	}
+
+	.topnav/*div*/.showtopnav a.icon {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	.topnav/*div*/.showtopnav a {
+		float: none;
+		display: block;
+		text-align: left;
+	}
+}
