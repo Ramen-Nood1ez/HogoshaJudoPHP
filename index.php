@@ -25,7 +25,13 @@
 		<title>Hogosha Judo</title>
 	</head>
 	<body style="text-align: center;">
-		<div id="includedContent" class="topnav"></div>
+		<div id="includedContent" class="topnav">
+			<?php 
+				$myfile = fopen("navbar.php", "r") or die("Unable to load navbar!");
+				echo fread($myfile, filesize("navbar.php"));
+				fclose($myfile);
+			?>
+		</div>
 
 		<br>
 		
