@@ -5,13 +5,10 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="public/style.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://kit.fontawesome.com/8e00593c4c.js" crossorigin="anonymous"></script>
 		<script> 
-			$(function(){
-			  $("#includedContent").load("navbar.html"); 
-			});
 			$(function(){
 			  $("#photos").load("photostemplate.html"); 
 			});
@@ -28,8 +25,10 @@
 		</div>
 
 		<div id="photos">
-			<?php 
-				$description = fopen("photos/desc.txt", "r") or die ("Unable to load description file!");
+			<?php
+				$file = fopen("photos/desc.txt", "r") or die ("Unable to load description file!");
+				$description = fread($file, filesize("photos/desc.txt"));
+				fclose($file);
 				$lines = explode("\n", $description);
 				foreach ($lines as $line) {
 					$sep_line = explode("+", $line);
