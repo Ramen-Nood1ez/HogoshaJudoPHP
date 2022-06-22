@@ -37,7 +37,7 @@
 					$image_info = getimagesize("photos/" . $image_name);
 					$width = $image_info[0];
 					$height = $image_info[1];
-					echo "<figure><img class='photosimg' width='$width' height='$height' ";
+					echo "<figure><img class='photosimg' width='$width' ";//height='$height' ";
 					echo "src='photos/$image_name' alt='$image_name'> <br>\n";
 					echo "<figcaption>$image_desc</figcaption></figure>\n";
 				}
