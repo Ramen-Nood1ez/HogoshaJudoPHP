@@ -23,6 +23,15 @@
 			fclose($myfile);
 		?>
 	</div>
+
+	<br>
+
+	<h1>Admin Tools</h1>
+
+	<div id="row1">
+		<a href="imgupload.php">Upload an image</a>
+		<a href="vidupload.php">Upload a video</a>
+	</div>
 	
 </body>
 </html>
