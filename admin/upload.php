@@ -29,13 +29,19 @@
 
 	<h1>Image/Video Upload Tool</h1>
 	
-	<form action="uploader.php" method="post">
+	<form action="uploader.php" method="post" enctype="multipart/form-data">
 		<div>
 			<label>Upload image</label>
 			<input type="file" name="file">
 		</div>
+
 		<div>
-			<input type="submit" value="Image">
+			<label>Add to more photos?</label>
+			<input type="checkbox" name="morephotos" value="true">
+		</div>
+
+		<div>
+			<input type="submit" value="submit">
 		</div>
 	</form>
 </body>
