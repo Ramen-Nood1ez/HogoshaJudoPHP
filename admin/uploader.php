@@ -13,7 +13,7 @@
 		// chdir("./morephotos");
 		$d = getcwd();
 		echo $d;
-		$target_dir = $d;
+		$target_dir = $d . "/morephotos";
 		$target_file = $target_dir . basename($_FILES["file"]["name"]);
 		$uploadOk = 1;
 		$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
