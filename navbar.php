@@ -8,7 +8,7 @@
 	<a href="/photos.php">Photos</a>
 	<a href="/morephotos.php">More Photos</a>
 	<a href="/contact.php">Contact Us</a>
-	<a href="/subscribe.php">Subscribe</a>
+	<!--a href="/subscribe.php">Subscribe</a-->
 	<a href="" onclick="ToggleDarkMode()">Toggle Dark Mode</a>
 	<a href="#" onclick="toggleTopNav()" class="icon">☰</a>
 	<script>

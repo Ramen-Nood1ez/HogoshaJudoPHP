@@ -1,11 +1,15 @@
 <?php
+	$redirect = "index.php";
+
+	$redirect = htmlspecialchars($_GET["redirect"]);
+
 	// Intialize the session
 	session_start();
 
 	// Check if user is already logged in, 
 	// if yes send them to the welcome page
 	if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-		header("location: main.php");
+		header("location: $redirect");
 		exit;
 	}
 	
@@ -14,6 +18,7 @@
 
 	// Define variables and initialize with empty values
 	$username = $password = "";
+	$permlevel = 0;
 	$username_err = $password_err = $login_err = "";
 
 	// Processing form data when form is submitted
@@ -36,7 +41,7 @@
 		// Validate credentials
 		if (empty($username_err) && empty($password_err)) {
 			// Prepare a select statement
-			$sql = "SELECT id, username, password FROM users WHERE username = ?";
+			$sql = "SELECT id, username, password, permlevel FROM users WHERE username = ?";
 
 			if ($stmt = mysqli_prepare($link, $sql)) {
 				// Bind variables to the prepared statement as parameters
@@ -53,7 +58,7 @@
 					// Check if username exists, if yes then verify password
 					if (mysqli_stmt_num_rows($stmt) == 1) {
 						// Bind result variables
-						mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
+						mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password, $permlevel);
 						
 						if (mysqli_stmt_fetch($stmt)) {
 							if (password_verify($password, $hashed_password)) {
@@ -64,6 +69,7 @@
 								$_SESSION["loggedin"] = true;
 								$_SESSION["id"] = $id;
 								$_SESSION["username"] = $username;
+								$_SESSION["permlevel"] = $permlevel;
 
 								// Redirect user to main page
 								header("location: index.php");
