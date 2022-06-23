@@ -1,10 +1,11 @@
 <?php
 	session_start();
 	if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-		header("location: /login/login.php/?redirect=/admin/panel.php");
+		header("location: /login/login.php/?redirect=/admin/imgupload.php");
 		exit;
 	}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,11 +27,16 @@
 
 	<br>
 
-	<h1>Admin Tools</h1>
-
-	<div id="row1">
-		<a href="upload.php">Upload an image/video</a>
-	</div>
+	<h1>Image/Video Upload Tool</h1>
 	
+	<form action="uploader.php" method="post">
+		<div>
+			<label>Upload image</label>
+			<input type="file" name="file">
+		</div>
+		<div>
+			<input type="submit" value="Image">
+		</div>
+	</form>
 </body>
 </html>
