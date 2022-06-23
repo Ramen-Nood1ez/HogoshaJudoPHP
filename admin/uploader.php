@@ -9,7 +9,7 @@
 <?php 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		echo $_POST["file"];
+		echo $_POST["morephotos"];
 	}
 
-	
 ?>
