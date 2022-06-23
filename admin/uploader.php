@@ -12,6 +12,7 @@
 		chdir("..");
 		chdir("morephotos");
 		$d = dir(getcwd());
+		echo $d;
 		$target_dir = $d;
 		$target_file = $target_dir . basename($_FILES["file"]["name"]);
 		$uploadOk = 1;
