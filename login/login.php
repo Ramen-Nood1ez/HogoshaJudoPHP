@@ -72,7 +72,7 @@
 								$_SESSION["permlevel"] = $permlevel;
 
 								// Redirect user to main page
-								header("location: index.php");
+								header("location: $redirect");
 							} else {
 								// Password is not valid, display a generic error message
 								$login_err = "Invalid username or password.";
