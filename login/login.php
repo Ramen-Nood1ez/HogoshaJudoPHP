@@ -9,6 +9,7 @@
 	// Check if user is already logged in, 
 	// if yes send them to the welcome page
 	if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+		echo $redirect;
 		header("location: $redirect");
 		exit;
 	}
