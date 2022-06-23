@@ -10,7 +10,7 @@
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$morephotos = $_POST["morephotos"];
 		chdir("..");
-		chdir("morephotos/");
+		chdir("./morephotos");
 		$d = getcwd();
 		echo $d;
 		$target_dir = $d;
