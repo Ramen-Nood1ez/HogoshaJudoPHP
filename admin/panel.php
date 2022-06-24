@@ -29,7 +29,7 @@
 	<h1>Admin Tools</h1>
 
 	<section class="panel-grid-layout">
-		<h3 style="grid-area: head1;">File Utils</h3>
+		<h3 style="grid-area: headone;">File Utils</h3>
 		<div class="panel-grid-row">
 			<a href="upload.php">Upload an image/video</a>
 			<a href="#">Unused</a>
