@@ -28,9 +28,17 @@
 
 	<h1>Admin Tools</h1>
 
-	<div id="row1">
-		<a href="upload.php">Upload an image/video</a>
-	</div>
+	<section class="panel-grid-layout">
+		<h3 style="grid-area: head1;">File Utils</h3>
+		<div class="panel-grid-row">
+			<a href="upload.php">Upload an image/video</a>
+			<a href="#">Unused</a>
+			<a href="#">Unused</a>
+			<a href="#">Unused</a>
+			<a href="#">Unused</a>
+		</div>
+		
+	</section>
 	
 </body>
 </html>

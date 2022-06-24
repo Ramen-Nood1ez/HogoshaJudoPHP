@@ -29,6 +29,21 @@
 	overflow: visible;
 }
 
+.panel-grid-layout {
+	display: grid;
+	gap: 50px;
+	grid-template-areas: 
+		'.   .   head1 .   .'
+		'row row row   row row';
+}
+
+.panel-grid-row {
+	display: grid;
+	grid-area: row;
+	grid-template-columns: auto auto auto auto auto;
+	grid-template-rows: auto;
+}
+
 /* Colors */
 .primary {
     color: var(--primary-color);
