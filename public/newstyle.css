@@ -33,15 +33,14 @@
 	display: grid;
 	gap: 25px;
 	grid-template-areas: 
-		'.   .   headone .   .'
-		'row row row     row row'
-		'.   .   headtwo .   .'
-		'row row row     row row';
+		'.    .    headone  .    .'
+		'row1 row1 row1     row1 row1'
+		'.    .    headtwo  .    .'
+		'row2 row2 row2     row2 row2';
 }
 
 .panel-grid-row {
 	display: grid;
-	grid-area: row;
 	grid-template-columns: auto auto auto auto auto;
 	grid-template-rows: auto;
 }
