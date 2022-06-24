@@ -105,7 +105,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Hogosha Judo File Share</title>
 	<!--link rel="stylesheet" href="/public/style.css"-->
-	<link rel="stylesheet" href="../newstyle.css">
+	<link rel="stylesheet" href="www.hogoshajudo.org/style.css">
 </head>
 <body>
 	<h2>Login</h2>
