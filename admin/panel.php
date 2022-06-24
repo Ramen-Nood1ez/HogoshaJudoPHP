@@ -38,7 +38,7 @@
 			<a href="#">Unused</a>
 		</div>
 		<h2 style="grid-area: headtwo;">Useful Links</h2>
-		<div style="grid-area: row1;" class="panel-grid-row">
+		<div style="grid-area: row2;" class="panel-grid-row">
 			<a href="https://cpanel.hogoshajudo.org/">Cpanel</a>
 			<a href="https://webmail.hogoshajudo.org/">Webmail</a>
 			<a href="#">Unused</a>
