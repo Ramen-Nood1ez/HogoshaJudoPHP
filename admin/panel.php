@@ -16,37 +16,45 @@
 	<title>Hogosha Judo Admin Panel</title>
 </head>
 <body>
-	<div id="includedContent" class="topnav">
-		<?php 
-			$myfile = fopen("../navbar.php", "r") or die("Unable to load navbar!");
-			echo fread($myfile, filesize("../navbar.php"));
-			fclose($myfile);
-		?>
+	<div class="grid-container">
+		<div id="includedContent" class="topnav">
+			<?php 
+				$myfile = fopen("../navbar.php", "r") or die("Unable to load navbar!");
+				echo fread($myfile, filesize("../navbar.php"));
+				fclose($myfile);
+			?>
+		</div>
+
+		<div style="grid-area: topright;">
+			<p>Logged in as: <?php echo $_SESSION["username"] ?>.</p>
+		</div>
+
+		<main>
+			<h1>Admin Tools</h1>
+
+			<section class="panel-grid-layout">
+				<h2 style="grid-area: headone;">File Utils</h2>
+				<div style="grid-area: row1;" class="panel-grid-row">
+					<a href="upload.php">Upload an image/video</a>
+					<a href="#">Unused</a>
+					<a href="#">Unused</a>
+					<a href="#">Unused</a>
+					<a href="#">Unused</a>
+				</div>
+				<h2 style="grid-area: headtwo;">Useful Links</h2>
+				<div style="grid-area: row2;" class="panel-grid-row">
+					<a href="https://cpanel.hogoshajudo.org/" target="_blank">Cpanel</a>
+					<a href="https://webmail.hogoshajudo.org/" target="_blank">Webmail</a>
+					<a href="#">Unused</a>
+					<a href="#">Unused</a>
+					<a href="#">Unused</a>
+				</div>
+				
+			</section>
+		</main>
 	</div>
 
-	<br>
-
-	<h1>Admin Tools</h1>
-
-	<section class="panel-grid-layout">
-		<h2 style="grid-area: headone;">File Utils</h2>
-		<div style="grid-area: row1;" class="panel-grid-row">
-			<a href="upload.php">Upload an image/video</a>
-			<a href="#">Unused</a>
-			<a href="#">Unused</a>
-			<a href="#">Unused</a>
-			<a href="#">Unused</a>
-		</div>
-		<h2 style="grid-area: headtwo;">Useful Links</h2>
-		<div style="grid-area: row2;" class="panel-grid-row">
-			<a href="https://cpanel.hogoshajudo.org/">Cpanel</a>
-			<a href="https://webmail.hogoshajudo.org/">Webmail</a>
-			<a href="#">Unused</a>
-			<a href="#">Unused</a>
-			<a href="#">Unused</a>
-		</div>
-		
-	</section>
+	
 	
 </body>
 </html>

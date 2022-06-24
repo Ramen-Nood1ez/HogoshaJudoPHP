@@ -14,9 +14,9 @@
 	display: grid;
 	gap: 50px;
 	grid-template-areas: 
-		'left topleft nav    nav    topright right'
-		'left main    main   main   main     right'
-		'left footer  footer footer footer   right';
+		'topleft .       nav    nav    .        topright'
+		'left    main    main   main   main     right'
+		'left    footer  footer footer footer   right';
 }
 
 .grid-container main {
