@@ -31,9 +31,11 @@
 
 .panel-grid-layout {
 	display: grid;
-	gap: 50px;
+	gap: 25px;
 	grid-template-areas: 
 		'.   .   headone .   .'
+		'row row row     row row'
+		'.   .   headtwo .   .'
 		'row row row     row row';
 }
 
