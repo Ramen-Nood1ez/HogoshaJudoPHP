@@ -52,6 +52,8 @@
 				
 			</section>
 		</main>
+
+		<footer><?php echo $_SESSION["permlevel"];?></footer>
 	</div>
 
 	
