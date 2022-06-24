@@ -32,18 +32,18 @@
 		<h2 style="grid-area: headone;">File Utils</h2>
 		<div class="panel-grid-row">
 			<a href="upload.php">Upload an image/video</a>
-			<!--a href="#">Unused</!--a>
 			<a href="#">Unused</a>
 			<a href="#">Unused</a>
-			<a href="#">Unused</a -->
+			<a href="#">Unused</a>
+			<a href="#">Unused</a>
 		</div>
 		<h2 style="grid-area: headtwo;">Useful Links</h2>
 		<div class="panel-grid-row">
 			<a href="https://cpanel.hogoshajudo.org/">Cpanel</a>
 			<a href="https://webmail.hogoshajudo.org/">Webmail</a>
-			<!--a href="#">Unused</ a>
 			<a href="#">Unused</a>
-			<a href="#">Unused</a -->
+			<a href="#">Unused</a>
+			<a href="#">Unused</a>
 		</div>
 		
 	</section>
