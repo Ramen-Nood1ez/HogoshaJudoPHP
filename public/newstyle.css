@@ -33,10 +33,10 @@
 	display: grid;
 	gap: 25px;
 	grid-template-areas: 
-		'headone .    .    .    .'
-		'row1    row1 row1 row1 row1'
-		'headtwo .    .    .    .'
-		'row2    row2 row2 row2 row2';
+		'.    .    headone .    .'
+		'row1 row1 row1    row1 row1'
+		'.    .    headtwo .    .'
+		'row2 row2 row2    row2 row2';
 }
 
 .panel-grid-row {
