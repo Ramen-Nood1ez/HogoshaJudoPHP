@@ -26,18 +26,18 @@
 		</div>
 
 		<div style="grid-area: topright;">
-			<p>Logged in as: <?php echo $_SESSION["username"] ?>.</p>
+			<p class="center-text">Logged in as: <?php echo $_SESSION["username"] ?></p>
 		</div>
 
 		<main>
 			<h1>Admin Tools</h1>
 
 			<section class="panel-grid-layout">
-				<h2 style="grid-area: headone;">File Utils</h2>
+				<h2 style="grid-area: headone;">Utilities</h2>
 				<div style="grid-area: row1;" class="panel-grid-row">
 					<a href="upload.php">Upload an image/video</a>
-					<a href="#">Unused</a>
-					<a href="#">Unused</a>
+					<a href="announcement.php">Make an announcement</a>
+					<a href="motd.php">Change the MOTD</a>
 					<a href="#">Unused</a>
 					<a href="#">Unused</a>
 				</div>
