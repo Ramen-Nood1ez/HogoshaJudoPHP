@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 		<!--link rel="stylesheet" href="style.css"-->
-		<link rel="stylesheet" href="public/newstyle.css">
+		<link rel="stylesheet" href="/public/newstyle.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://kit.fontawesome.com/8e00593c4c.js" crossorigin="anonymous"></script>
 		<title>Hogosha Judo</title>
