@@ -33,8 +33,8 @@
 	display: grid;
 	gap: 50px;
 	grid-template-areas: 
-		'.   .   head1 .   .'
-		'row row row   row row';
+		'.   .   headone .   .'
+		'row row row     row row';
 }
 
 .panel-grid-row {
