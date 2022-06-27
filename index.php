@@ -14,9 +14,12 @@
 		<div class="grid-container">
 			<div id="includedContent" class="topnav">
 				<?php 
+					include("navbar.php");
+					/*
 					$myfile = fopen("navbar.php", "r") or die("Unable to load navbar!");
 					echo fread($myfile, filesize("navbar.php"));
 					fclose($myfile);
+					*/
 				?>
 			</div>
 
