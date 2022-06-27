@@ -1,7 +1,5 @@
 <?php
-	$redirect = "/index.php";
-
-	$redirect = htmlspecialchars($_GET["redirect"]);
+	$redirect = isset($_GET["redirect"]) ? htmlspecialchars($_GET["redirect"]) : "/index.php";
 
 	// Intialize the session
 	session_start();
