@@ -1,5 +1,5 @@
 <?php
-	$redirect = "index.php";
+	$redirect = "/index.php";
 
 	$redirect = htmlspecialchars($_GET["redirect"]);
 
