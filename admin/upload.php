@@ -38,10 +38,10 @@
 			<input type="text" name="desc">
 		</div>
 
-		<div>
+		<!--div>
 			<label>Add to more photos?</label>
 			<input type="checkbox" name="morephotos" value="true">
-		</div>
+		</div-->
 
 		<div>
 			<input type="submit" value="submit">
