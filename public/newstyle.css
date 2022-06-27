@@ -369,14 +369,15 @@ p.center-text {
 	}
 	.parallax {
 		/*background-image: url("images/Hiki-otoshi.jpg");*/
-	
-		min-height: 150px;
+		
+		min-height: 0px/*150px*/;
 		min-width: 100%;
 	
 		background-attachment: fixed;
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: 100%;
+		visibility: hidden;
 	}
 	.container {
 		display: inline;
