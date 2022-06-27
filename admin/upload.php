@@ -1,9 +1,6 @@
 <?php
-	session_start();
-	if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-		header("location: /login/login.php/?redirect=/admin/imgupload.php");
-		exit;
-	}
+	$redirect = "/login/login.php?redirect=/admin/upload.php";
+	require("/logincheck.php");
 ?>
 
 <!DOCTYPE html>
