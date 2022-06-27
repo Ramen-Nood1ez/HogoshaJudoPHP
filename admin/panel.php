@@ -33,7 +33,7 @@
 	<div class="grid-container">
 		<div id="includedContent" class="topnav">
 			<?php 
-				include("navbar.php");
+				include("/navbar.php");
 			?>
 		</div>
 

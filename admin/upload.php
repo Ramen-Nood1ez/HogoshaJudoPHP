@@ -19,7 +19,7 @@
 <body>
 	<div id="includedContent" class="topnav">
 		<?php 
-			include("navbar.php");
+			include("/navbar.php");
 		?>
 	</div>
 
@@ -31,6 +31,11 @@
 		<div>
 			<label>Upload image</label>
 			<input type="file" name="file">
+		</div>
+
+		<div>
+			<label>Add a description</label>
+			<input type="text" name="desc">
 		</div>
 
 		<div>
