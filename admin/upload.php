@@ -47,5 +47,9 @@
 			<input type="submit" value="submit">
 		</div>
 	</form>
+
+	<br>
+
+	<a href="panel.php">Back</a>
 </body>
 </html>
