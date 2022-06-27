@@ -16,6 +16,9 @@
 				include("navbar.php");
 			?>
 		</div>
+
+		<br>
+
 		<div id="photos">
 			<?php
 				$images = scandir("./morephotos/");
