@@ -21,7 +21,7 @@
 
 		if (!empty($description)) {
 			echo $_FILES["file"]["name"] . "$description";
-			$file = fopen($d . "/photos/desc.txt", "a") or die("Unable to open file!");
+			$file = fopen("../photos/desc.txt", "a") or die("Unable to open file!");
 			fwrite($file, $_FILES["file"]["name"] . "$description");
 			fclose($file);
 		}
