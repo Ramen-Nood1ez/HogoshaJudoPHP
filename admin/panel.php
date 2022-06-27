@@ -1,12 +1,16 @@
 <?php
+	$redirect = "/login/login.php/?redirect=/admin/panel.php";
+	require("/logincheck.php");
 	session_start();
 
 	$override_err = isset($_GET["error"]) ? htmlspecialchars($_GET["error"]) : "";
 
+	/*
 	if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 		header("location: /login/login.php/?redirect=/admin/panel.php");
 		exit;
 	}
+	*/
 
 	if ($override_err == 403) {
 		header("HTTP/1.1 403 FORBIDDEN");
