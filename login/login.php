@@ -106,6 +106,13 @@
 	<link rel="stylesheet" href="/public/newstyle.css">
 </head>
 <body>
+
+	<div id="includedContent" class="topnav">
+		<?php 
+			include("../navbar.php");
+		?>
+	</div>
+
 	<div class="panel">
 		<section class="login">
 			<h2 style="grid-area: header;">Login</h2>
