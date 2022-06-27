@@ -14,7 +14,7 @@
 		$description = isset($_POST["desc"]) ? $_POST["desc"] : "";
 		$d = getcwd();
 		echo $d;
-		$target_dir = (empty($description)) ? "$d/morephotos" : "../photos";
+		$target_dir = (empty($description)) ? "$d/morephotos" : "../photos/";
 		$target_file = $target_dir . basename($_FILES["file"]["name"]);
 		$uploadOk = 1;
 		$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
