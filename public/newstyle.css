@@ -361,8 +361,11 @@ p.center-text {
 	.logo {
 		object-fit: cover; 
 		object-position: 90% 10%;
+		/*
 		width: 50%;
 		height: 50%;
+		*/
+		scale: 50%;
 	}
 	.parallax {
 		/*background-image: url("images/Hiki-otoshi.jpg");*/
