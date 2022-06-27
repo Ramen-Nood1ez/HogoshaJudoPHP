@@ -19,12 +19,8 @@
 				?>
 			</div>
 
-			<br>
-
-			<h1>Hogosha Judo / Third Heaven Martial Arts</h1>
-
 			<main>
-				
+				<h1>Hogosha Judo / Third Heaven Martial Arts</h1>
 
 				<i class="fas fa-phone-alt"></i>
 				<a href="tel:920-319-0439" class="normlink">(920) 319-0439</a>
