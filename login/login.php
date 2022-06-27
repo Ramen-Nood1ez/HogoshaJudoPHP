@@ -108,30 +108,40 @@
 	<link rel="stylesheet" href="/public/newstyle.css">
 </head>
 <body>
-	<h2>Login</h2>
-	<p>Please fill in your credentials to login.</p>
+	<div class="panel">
+		<section class="login">
+			<h2 style="grid-area: header;">Login</h2>
+			<p style="grid-area: instructions;">Please fill in your credentials to login.</p>
 
-	<?php 
-		if (!empty($login_err)) {
-			echo "<div class='error'> " . $login_err . "</div>";
-		}
-	?>
+			<?php 
+				if (!empty($login_err)) {
+					echo "<div class='error'> " . $login_err . "</div>";
+				}
+			?>
 
-	<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-		<div>
-			<label>Username</label>
-			<input type="text" name="username" value="<?php echo $username; ?>">
-			<span><?php echo $username_err; ?></span>
-		</div>
-		<div>
-			<label>Password</label>
-			<input type="password" name="password">
-			<span><?php echo $password_err; ?></span>
-		</div>
-		<div>
-			<input type="submit" value="Login">
-		</div>
-	</form>
+			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+				<div class="username">
+					<label style="grid-area: username-label;">Username</label>
+					<br>
+					<input style="grid-area: username-input;" 
+						type="text" name="username" value="<?php echo $username; ?>">
+					<br>
+					<span style="grid-area: username-err;" ><?php echo $username_err; ?></span>
+				</div>
+				<div class="password">
+					<label style="grid-area: password-label;">Password</label>
+					<br>
+					<input type="password" style="grid-area: password-input;" name="password">
+					<br>
+					<span style="grid-area: password-err; font-size: small;"><?php echo $password_err; ?></span>
+				</div>
+				<div class="submit">
+					<input type="submit" style="grid-area: submit-btn;" value="Login">
+				</div>
+			</form>
+		</section>
+	</div>
+	
 
 </body>
 </html>
