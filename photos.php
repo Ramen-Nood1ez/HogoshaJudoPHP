@@ -18,11 +18,11 @@
 	<body>
 		<div id="includedContent" class="topnav">
 			<?php 
-				$myfile = fopen("navbar.php", "r") or die("Unable to load navbar!");
-				echo fread($myfile, filesize("navbar.php"));
-				fclose($myfile);
+				include("navbar.php");
 			?>
 		</div>
+
+		<br>
 
 		<div id="photos">
 			<?php
