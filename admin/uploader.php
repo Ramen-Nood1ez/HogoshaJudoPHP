@@ -20,8 +20,8 @@
 		$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
 		if (!empty($description)) {
-			$file = fopen($d . "/photos/desc.txt", "a") or die("Unable to open file!");
 			echo $_FILES["file"]["name"] . "$description";
+			$file = fopen($d . "/photos/desc.txt", "a") or die("Unable to open file!");
 			fwrite($file, $_FILES["file"]["name"] . "$description");
 			fclose($file);
 		}
