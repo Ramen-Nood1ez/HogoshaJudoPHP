@@ -176,14 +176,15 @@ b {
 }
 
 .announcement-panel {
-	position: absolute;
-	transform: translate(-50%, 0%);
-	left: 50%;
 	padding: 10px;
 	width: fit-content;
 	height: auto;
 	background-color: #212f39;
 	border-radius: 10px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
 }
 
 .login {
