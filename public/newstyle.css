@@ -188,8 +188,8 @@ b {
 	margin-bottom: 50px;
 }
 
-.announcement.warning {
-	color: var(--warning-color);
+.warning {
+	background-color: var(--warning-color) !important;
 }
 
 .login {
