@@ -43,15 +43,20 @@
 	$sql = "SELECT id, title, description, type, end_date FROM announcements WHERE id=1";
 
 	if ($stmt = mysqli_prepare($link, $sql)) {
+		echo "sql prepare";
 		// Attempt to execute prepared statement
 		if (mysqli_stmt_execute($stmt)) {
+			echo "sql execute";
 			// Store result
 			mysqli_stmt_store_result($stmt);
+			echo "sql store result";
 
 			// Bind result variables
 			mysqli_stmt_bind_result($stmt, $id, $title, $description, $type, $end_date);
+			echo "sql bind result";
 			
 			if (mysqli_stmt_fetch($stmt)) {
+				echo "sql fetch";
 				// Password is correct, so start a new session
 				session_start();
 
@@ -59,6 +64,8 @@
 					echo "<h3>" . $title . "</h3>\n";
 					echo "<p>" . $description . "</p>";
 				}
+			} else {
+				echo "Fetch went wrong!";
 			}
 		} else {
 			echo "Oops! Something went wrong. Please try again later.";
