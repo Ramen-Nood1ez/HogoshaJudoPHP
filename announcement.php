@@ -68,13 +68,16 @@
 							break;
 					}
 
-					echo "<div class='announcement-panel'>\n";
+					echo "<div class='align'>\n";
+
+					echo "<div class='announcement-panel center'>\n";
 
 					echo "<div class='announcement $class'>\n";
 
 					echo "<h3>" . $title . "</h3>\n";
 					echo "<p>" . $description . "</p>";
 
+					echo "</div>\n";
 					echo "</div>\n";
 					echo "</div>\n";
 				}
