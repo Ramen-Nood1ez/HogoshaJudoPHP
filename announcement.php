@@ -38,6 +38,8 @@
 	$end_date = $current_date;
 	$type = $id = 0;
 
+	echo $end_date;
+
 	$sql = "SELECT id, title, description, type, end_date FROM announcements WHERE id=(SELECT MAX(id) FROM announcements)";
 
 	if ($stmt = mysqli_prepare($link, $sql)) {
@@ -52,8 +54,6 @@
 			if (mysqli_stmt_fetch($stmt)) {
 				// Password is correct, so start a new session
 				session_start();
-
-				echo $end_date;
 
 				if ((strtotime($current_date) <= strtotime($end_date))) {
 					echo "<h3>" . $title . "</h3>\n";
