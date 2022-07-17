@@ -26,6 +26,10 @@
 					<img src="images/happyholidays.png">
 				</div>
 
+				<?php 
+					include("announcement.php");
+				?>
+
 				<img class="logo" width="300" height="320" alt="Hogosha Judo" src="images/Registered-Hogosha-Logo-3.jpg">
 
 				<br>

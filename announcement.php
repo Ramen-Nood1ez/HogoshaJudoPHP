@@ -52,20 +52,15 @@
 			mysqli_stmt_bind_result($stmt, $id, $title, $description, $type, $end_date);
 			
 			if (mysqli_stmt_fetch($stmt)) {
-				// Password is correct, so start a new session
-				session_start();
-
-				echo "End date: " . $end_date . "\n";
-
-				echo "<div class='eventmessage' id='eventmessage'>\n";
-
-				echo "\t\t<h3>" . $title . "</h3>\n";
-				echo "\t\t<p>" . $description . "</p>";
-
-				echo "</div>\n";
-
 				if ((strtotime($current_date) <= strtotime($end_date)) || empty(trim($end_date))) {
-					echo "No end date\n";
+					echo "End date: " . $end_date . "\n";
+
+					echo "<div class='eventmessage' id='eventmessage'>\n";
+
+					echo "\t\t<h3>" . $title . "</h3>\n";
+					echo "\t\t<p>" . $description . "</p>";
+
+					echo "</div>\n";
 				}
 			} else {
 				echo "Fetch went wrong!";
