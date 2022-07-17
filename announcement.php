@@ -68,7 +68,7 @@
 							break;
 					}
 
-					echo "<div class='panel'>\n";
+					echo "<div class='announcement-panel'>\n";
 
 					echo "<div class='announcement $class'>\n";
 

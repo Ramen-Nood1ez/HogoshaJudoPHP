@@ -117,7 +117,7 @@ b {
 
 div.announcement {
 	display: grid;
-	
+
 }
 
 .strikeout {
@@ -175,6 +175,19 @@ div.announcement {
 	padding: 10px;
 	width: 400px;
 	height: 275px;
+
+	background-color: #212f39;
+	border-radius: 10px;
+}
+
+.announcement-panel {
+	position: absolute;
+	left: 50%;
+	top: 40%;
+	transform: translate(-50%, -50%);
+	padding: 10px;
+	width: auto;
+	height: auto;
 
 	background-color: #212f39;
 	border-radius: 10px;
