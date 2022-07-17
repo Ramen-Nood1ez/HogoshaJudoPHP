@@ -1,6 +1,6 @@
 <?php
 	$redirect = "/login/login.php?redirect=/admin/upload.php";
-	require("/logincheck.php");
+	require("../logincheck.php");
 ?>
 
 <!DOCTYPE html>
