@@ -53,7 +53,9 @@
 				// Password is correct, so start a new session
 				session_start();
 
-				if (strtotime($current_date) <= strtotime($end_date)) {
+				echo $end_date;
+
+				if ((strtotime($current_date) <= strtotime($end_date))) {
 					echo "<h3>" . $title . "</h3>\n";
 					echo "<p>" . $description . "</p>";
 				}
