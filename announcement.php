@@ -64,9 +64,8 @@
 
 				echo "</div>\n";
 
-				if ((strtotime($current_date) <= strtotime($end_date))) {
-					echo "<h3>" . $title . "</h3>\n";
-					echo "<p>" . $description . "</p>";
+				if ((strtotime($current_date) <= strtotime($end_date)) || empty(trim($end_date))) {
+					echo "No end date\n";
 				}
 			} else {
 				echo "Fetch went wrong!";
