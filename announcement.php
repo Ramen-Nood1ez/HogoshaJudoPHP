@@ -38,7 +38,7 @@
 	$end_date = $current_date;
 	$type = $id = 0;
 
-	echo $end_date;
+	// echo $end_date;
 
 	$sql = "SELECT id, title, description, type, end_date FROM announcements WHERE id=1";
 
