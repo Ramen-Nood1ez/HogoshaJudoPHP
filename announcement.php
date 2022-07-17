@@ -53,13 +53,29 @@
 			
 			if (mysqli_stmt_fetch($stmt)) {
 				if ((strtotime($current_date) <= strtotime($end_date)) || empty(trim($end_date))) {
-					echo "End date: " . $end_date . "\n";
+					$class = "";
+					switch ($type) {
+						case 1:
+							$class = "warning";
+							break;
 
-					echo "<div class='eventmessage' id='eventmessage'>\n";
+						case 2:
+							$class = "critical";
+							break;
+						
+						default:
+							# code...
+							break;
+					}
 
-					echo "\t\t<h3>" . $title . "</h3>\n";
-					echo "\t\t<p>" . $description . "</p>";
+					echo "<div class='panel'>\n";
 
+					echo "<div class='announcement $class'>\n";
+
+					echo "<h3>" . $title . "</h3>\n";
+					echo "<p>" . $description . "</p>";
+
+					echo "</div>\n";
 					echo "</div>\n";
 				}
 			} else {

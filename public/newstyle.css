@@ -115,6 +115,11 @@ b {
 	color: coral;
 }
 
+div.announcement {
+	display: grid;
+	
+}
+
 .strikeout {
 	color: var(--primary-color);
 	line-height: 1px;
