@@ -21,18 +21,20 @@
 
 		<h1>About Judo</h1>
 
-		<!--div class="parallax" style="background-image: url('images/aboutjudopage.jpg')"></div-->
+		<main>
+			<!--div class="parallax" style="background-image: url('images/aboutjudopage.jpg')"></div-->
 
-		<div>
-			<p>
-				Judo is a Martial Art, sport, a conditioning process – more importantly a way of life.  
-				Judo increases self-esteem, respect and self-discipline.
-			</p>
+			<div>
+				<p>
+					Judo is a Martial Art, sport, a conditioning process – more importantly a way of life.  
+					Judo increases self-esteem, respect and self-discipline.
+				</p>
 
-			<p>
-				Judo is the most widely practiced martial art  and according to the College of 
-				Sports Medicine the safest contact sport for children under 13. 
-			</p>
-		</div>
+				<p>
+					Judo is the most widely practiced martial art  and according to the College of 
+					Sports Medicine the safest contact sport for children under 13. 
+				</p>
+			</div>
+		</main>
 	</body>
 </html>
