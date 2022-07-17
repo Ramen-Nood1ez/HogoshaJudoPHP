@@ -7,7 +7,7 @@
     --secondary-color: #7dc0bc; /* #03DAC5 */
     --error-color: #c07d7d; /* #CF6679 */
 	--light-mode-color: white;
-	--warning-color: #ffff8a;
+	--warning-color: #a2df58;
 	--light-mode-color-variant: var(--primary-variant-hover);
 }
 
@@ -190,6 +190,7 @@ b {
 
 .warning {
 	background-color: var(--warning-color) !important;
+	color: black !important;
 }
 
 .login {
