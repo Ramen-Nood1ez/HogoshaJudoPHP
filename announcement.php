@@ -40,7 +40,7 @@
 
 	echo $end_date;
 
-	$sql = "SELECT id, title, description, type, end_date FROM announcements WHERE id=(SELECT MAX(id) FROM announcements)";
+	$sql = "SELECT id, title, description, type, end_date FROM announcements WHERE id=1";
 
 	if ($stmt = mysqli_prepare($link, $sql)) {
 		// Attempt to execute prepared statement
