@@ -70,7 +70,7 @@
 
 					echo "<div class='announcement-panel $class'>\n";
 
-					echo "<h3>" . $title . "</h3>\n";
+					echo "<h2>" . $title . "</h2>\n";
 					echo "<p>" . $description . "</p>";
 
 					echo "</div>\n";
