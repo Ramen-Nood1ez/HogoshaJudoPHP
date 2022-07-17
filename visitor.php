@@ -7,5 +7,6 @@
 	}
 	else {
 		echo "$packed";
+		echo bindec($packed);
 	}
 ?>
