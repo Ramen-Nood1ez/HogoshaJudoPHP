@@ -188,7 +188,7 @@ b {
 	margin-bottom: 50px;
 }
 
-.announcement .warning {
+.announcement.warning {
 	color: var(--warning-color);
 }
 
