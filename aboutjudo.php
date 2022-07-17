@@ -10,29 +10,31 @@
 		<script src="https://kit.fontawesome.com/8e00593c4c.js" crossorigin="anonymous"></script>
 		<title>Hogosha Judo</title>
 	</head>
-	<body>
-		<div id="includedContent" class="topnav">
-			<?php 
-				include("navbar.php");
-			?>
-		</div>
-
-		<h1>About Judo</h1>
-
-		<main>
-			<!--div class="parallax" style="background-image: url('images/aboutjudopage.jpg')"></div-->
-
-			<div>
-				<p>
-					Judo is a Martial Art, sport, a conditioning process – more importantly a way of life.  
-					Judo increases self-esteem, respect and self-discipline.
-				</p>
-
-				<p>
-					Judo is the most widely practiced martial art  and according to the College of 
-					Sports Medicine the safest contact sport for children under 13. 
-				</p>
+	<body style="text-align: center;">
+		<div class="grid-container">
+			<div id="includedContent" class="topnav">
+				<?php 
+					include("navbar.php");
+				?>
 			</div>
-		</main>
+
+			<h1>About Judo</h1>
+
+			<main>
+				<!--div class="parallax" style="background-image: url('images/aboutjudopage.jpg')"></div-->
+
+				<div>
+					<p>
+						Judo is a Martial Art, sport, a conditioning process – more importantly a way of life.  
+						Judo increases self-esteem, respect and self-discipline.
+					</p>
+
+					<p>
+						Judo is the most widely practiced martial art  and according to the College of 
+						Sports Medicine the safest contact sport for children under 13. 
+					</p>
+				</div>
+			</main>
+		</div>
 	</body>
 </html>
