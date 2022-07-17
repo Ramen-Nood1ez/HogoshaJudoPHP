@@ -1,4 +1,5 @@
 <?php 
+	require_once("./login/config.php");
 	session_start();
 	echo $_SERVER['REMOTE_ADDR'] . "\n";
 
