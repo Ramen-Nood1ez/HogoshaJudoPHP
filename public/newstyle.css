@@ -190,7 +190,11 @@ b {
 
 .warning {
 	background-color: var(--warning-color) !important;
-	color: black !important;
+	color: var(--main-bg-color) !important;
+}
+
+.warning p {
+	color: var(--main-bg-color) !important;
 }
 
 .login {
