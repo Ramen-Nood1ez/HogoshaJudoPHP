@@ -59,6 +59,7 @@
 
 			mysqli_stmt_close($stmt2);
 		} else {
+			echo "$address";
 			echo "prepare failed!";
 		}
 	}
