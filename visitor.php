@@ -23,12 +23,12 @@
 			mysqli_stmt_bind_result($stmt, $selected_addr);
 			
 			if (mysqli_stmt_fetch($stmt)) {
-				echo "Found ip:\t\t$selected_addr\n";
+				// echo "Found ip:\t\t$selected_addr\n";
 			} else {
 				// echo "Couldn't find ip address in the database... Adding it...";
 			}
 		} else {
-			echo "Oops! Something went wrong. Please try again later.\n";
+			// echo "Oops! Something went wrong. Please try again later.\n";
 		}
 
 		// Close statement
@@ -39,53 +39,53 @@
 
 	if (empty($selected_addr)) {
 		$sql = "INSERT INTO uvisitors (ip) VALUES ('$address')"; // VALUES (?, ?)";
-		echo "Test";
+		// echo "Test";
 
 		if ($stmt = mysqli_prepare($link, $sql)) {
-			echo "prepare\n";
+			// echo "prepare\n";
 			// Bind variables to the prepared statement as parameters
 			mysqli_stmt_bind_param($stmt, "s", $param_ip);
-			echo "bind\n";
+			// echo "bind\n";
 
 			// Set parameters
 			$param_ip = $address;
 
 			// Attempt to execute the prepared statement
 			if (mysqli_stmt_execute($stmt)) {
-				echo "Added to uvisitors!";
+				// echo "Added to uvisitors!";
 			} else {
 				echo "Oops! Something went wrong...";
 			}
 
 			mysqli_stmt_close($stmt);
 		} else {
-			echo "$address";
+			// echo "$address";
 			echo "prepare failed!";
 		}
 	}
 
 	$sql = "INSERT INTO visitors (ip) VALUES ('$address')"; // VALUES (?, ?)";
-	echo "Test";
+	// echo "Test";
 
 	if ($stmt = mysqli_prepare($link, $sql)) {
-		echo "prepare\n";
+		// echo "prepare\n";
 		// Bind variables to the prepared statement as parameters
 		mysqli_stmt_bind_param($stmt, "s", $param_ip);
-		echo "bind\n";
+		// echo "bind\n";
 
 		// Set parameters
 		$param_ip = $address;
 
 		// Attempt to execute the prepared statement
 		if (mysqli_stmt_execute($stmt)) {
-			echo "Added to visitors!";
+			// echo "Added to visitors!";
 		} else {
 			echo "Oops! Something went wrong...";
 		}
 
 		mysqli_stmt_close($stmt);
 	} else {
-		echo "$address";
+		// echo "$address";
 		echo "prepare failed!";
 	}
 

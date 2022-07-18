@@ -12,6 +12,7 @@
 	</head>
 	<body style="text-align: center;">
 		<div class="grid-container">
+			<?php include ("visitor.php");?>
 			<div id="includedContent" class="topnav">
 				<?php 
 					include("navbar.php");
