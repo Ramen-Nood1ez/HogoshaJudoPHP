@@ -1,10 +1,10 @@
 <?php 
 	session_start();
 
-	if ($_SESSION["hasvisited"] == true) {
+	if ($_COOKIE["hasvisited"] == true) {
 		exit;
 	} else {
-		$_SESSION["hasvisited"] = false;
+		setcookie("hasvisited", false, time() + 120, "/");
 	}
 	// echo $_SERVER['REMOTE_ADDR'] . "\n";
 

@@ -15,7 +15,7 @@
 	<?php 
 		session_start();
 
-		if (!isset($_SESSION["hasvisited"]) || $_SESSION["hasvisited"] == false) {
+		if (!isset($_COOKIE["hasvisited"]) || $_COOKIE["hasvisited"] == false) {
 			include("visitor.php");
 		}
 	?>
