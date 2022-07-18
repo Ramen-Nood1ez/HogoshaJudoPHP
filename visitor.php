@@ -21,7 +21,7 @@
 			if (mysqli_stmt_fetch($stmt)) {
 				echo "Found ip:\t\t$selected_addr\n";
 			} else {
-				echo "Couldn't find ip address in the database... Adding it...";
+				// echo "Couldn't find ip address in the database... Adding it...";
 			}
 		} else {
 			echo "Oops! Something went wrong. Please try again later.\n";
@@ -37,8 +37,8 @@
 	echo "$selected_addr";
 
 	if (empty($selected_addr)) {
-		echo "Test";
 		$sql = "INSERT INTO uvisitors (id, ip) VALUES (NULL, $address)"; // VALUES (?, ?)";
+		echo "Test";
 
 		if ($stmt = mysqli_prepare($link, $sql)) {
 			echo "prepare\n";
