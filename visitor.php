@@ -35,7 +35,7 @@
 		mysqli_stmt_close($stmt);
 	}
 
-	echo "$selected_addr";
+	// echo "$selected_addr";
 
 	if (empty($selected_addr)) {
 		$sql = "INSERT INTO uvisitors (ip) VALUES ('$address')"; // VALUES (?, ?)";
