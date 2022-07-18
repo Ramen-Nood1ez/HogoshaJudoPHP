@@ -16,7 +16,7 @@
 		session_start();
 
 		if (!isset($_COOKIE["hasvisited"]) || $_COOKIE["hasvisited"] == false) {
-			setcookie("hasvisited", false, time()+3600*24*30, "/");
+			setcookie("hasvisited", false);
 			include("visitor.php");
 		}
 	?>
