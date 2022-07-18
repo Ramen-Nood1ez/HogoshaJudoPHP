@@ -4,7 +4,7 @@
 	if ($_COOKIE["hasvisited"] == true) {
 		exit;
 	} else {
-		setcookie("hasvisited", false, time() + 5000, "/");
+		setcookie("hasvisited", false, time() + 50000, "/");
 	}
 	// echo $_SERVER['REMOTE_ADDR'] . "\n";
 
