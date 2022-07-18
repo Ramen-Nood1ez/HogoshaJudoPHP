@@ -7,7 +7,7 @@
 	$address = $_SERVER['REMOTE_ADDR'];
 
 	$details = json_decode(file_get_contents("http://ipinfo.io/{$address}/json"));
-	echo $details->city; // -> "Mountain View"
+	echo $details->country; // -> "Mountain View"
 
 	$sql = "SELECT ip FROM uvisitors WHERE ip='$address'";
 
@@ -38,7 +38,7 @@
 	echo "$selected_addr";
 
 	if (empty($selected_addr)) {
-		$sql = "INSERT INTO uvisitors (ip) VALUES ('$address')"; // VALUES (?, ?)";
+		$sql = "INSERT INTO uvisitors (ip, country) VALUES ('$address', '$details')"; // VALUES (?, ?)";
 		echo "Test";
 
 		if ($stmt = mysqli_prepare($link, $sql)) {
