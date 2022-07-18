@@ -41,8 +41,10 @@
 		$sql = "INSERT INTO `uvisitors` (`id`, `ip`) VALUES (?, ?)";
 
 		if ($stmt = mysqli_prepare($link, $sql)) {
+			echo "prepare\n";
 			// Bind variables to the prepared statement as parameters
 			mysqli_stmt_bind_param($stmt, "ss", $param_id, $param_ip);
+			echo "bind\n";
 
 			// Set parameters
 			$param_ip = $ip;
