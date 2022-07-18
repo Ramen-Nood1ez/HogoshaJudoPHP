@@ -38,14 +38,15 @@
 
 	if (empty($selected_addr)) {
 		echo "Test";
-		$sql = "INSERT INTO `uvisitors` (`id`, `ip`) VALUES (NULL, '$address')";
+		$sql = "INSERT INTO `uvisitors` (`id`, `ip`) VALUES (?, ?)";
 
 		if ($stmt = mysqli_prepare($link, $sql)) {
 			// Bind variables to the prepared statement as parameters
-			mysqli_stmt_bind_param($stmt, "s", $param_ip);
+			mysqli_stmt_bind_param($stmt, "ss", $param_id, $param_ip);
 
 			// Set parameters
 			$param_ip = $ip;
+			$param_id = "NULL";
 
 			// Attempt to execute the prepared statement
 			if (mysqli_stmt_execute($stmt)) {
