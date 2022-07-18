@@ -58,6 +58,8 @@
 			}
 
 			mysqli_stmt_close($stmt);
+		} else {
+			echo "prepare failed!";
 		}
 	}
 
