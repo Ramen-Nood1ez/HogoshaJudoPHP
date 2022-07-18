@@ -1,13 +1,13 @@
 <?php 
 	require_once("./login/config.php");
 	session_start();
-	echo $_SERVER['REMOTE_ADDR'] . "\n";
+	// echo $_SERVER['REMOTE_ADDR'] . "\n";
 
 
 	$address = $_SERVER['REMOTE_ADDR'];
 
 	$details = json_decode(file_get_contents("http://ipinfo.io/{$address}/json"));
-	echo $details->country; // -> "Mountain View"
+	// echo $details->country; // -> "Mountain View"
 
 	$sql = "SELECT ip FROM uvisitors WHERE ip='$address'";
 
