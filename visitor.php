@@ -44,7 +44,7 @@
 		if ($stmt = mysqli_prepare($link, $sql)) {
 			echo "prepare\n";
 			// Bind variables to the prepared statement as parameters
-			mysqli_stmt_bind_param($stmt, "ss", $param_ip);
+			mysqli_stmt_bind_param($stmt, "ss", $param_ip, $param_country);
 			echo "bind\n";
 
 			// Set parameters
