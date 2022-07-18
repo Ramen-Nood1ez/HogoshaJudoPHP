@@ -31,38 +31,34 @@
 		mysqli_stmt_close($stmt);
 	}
 
-	// Close connection
-	mysqli_close($link);
-
 	echo "$selected_addr";
 
 	if (empty($selected_addr)) {
-		$sql2 = "INSERT INTO uvisitors (id, ip) VALUES (NULL, $address)"; // VALUES (?, ?)";
+		$sql = "INSERT INTO uvisitors (ip) VALUES ($address)"; // VALUES (?, ?)";
 		echo "Test";
 
-		if ($stmt2 = mysqli_prepare($link2, $sql2)) {
+		if ($stmt = mysqli_prepare($link, $sql)) {
 			echo "prepare\n";
 			// Bind variables to the prepared statement as parameters
-			// mysqli_stmt_bind_param($stmt, "ss", $param_id, $param_ip);
-			// echo "bind\n";
+			mysqli_stmt_bind_param($stmt, "s", $param_ip);
+			echo "bind\n";
 
 			// Set parameters
 			$param_ip = $address;
-			$param_id = "NULL";
 
 			// Attempt to execute the prepared statement
-			if (mysqli_stmt_execute($stmt2)) {
+			if (mysqli_stmt_execute($stmt)) {
 				echo "Added to visitors!";
 			} else {
 				echo "Oops! Something went wrong...";
 			}
 
-			mysqli_stmt_close($stmt2);
+			mysqli_stmt_close($stmt);
 		} else {
 			echo "$address";
 			echo "prepare failed!";
 		}
 	}
 
-	mysqli_close($link2);
+	mysqli_close($link);
 ?>
