@@ -6,6 +6,12 @@
 
 	$address = $_SERVER['REMOTE_ADDR'];
 
+	if ($_SESSION["hasvisited"] == true) {
+		exit;
+	} else {
+		$_SESSION["hasvisited"] = false;
+	}
+
 	$details = json_decode(file_get_contents("http://ipinfo.io/{$address}/json"));
 	// echo $details->country; // -> "Mountain View"
 
@@ -90,4 +96,6 @@
 	}
 
 	mysqli_close($link);
+
+	$_SESSION["hasvisited"] = true;
 ?>
