@@ -11,7 +11,13 @@
 	<!--a href="/subscribe.php">Subscribe</a-->
 	<?php 
 		include("extendednavbar.php");
-		include("visitor.php");
+	?>
+	<?php 
+		session_start();
+
+		if (isset($_SESSION["hasvisited"]) && $_SESSION["hasvisited"] == false) {
+			include("visitor.php");
+		}
 	?>
 	<a href="" onclick="ToggleDarkMode()">Toggle Dark Mode</a>
 	<a href="#" onclick="toggleTopNav()" class="icon">☰</a>
