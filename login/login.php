@@ -20,8 +20,15 @@
 	$permlevel = 0;
 	$username_err = $password_err = $login_err = "";
 
+	$account_disabled = false;
+
+	if (isset($_SESSION["accountdisabled"]) && $_SESSION["accountdisabled"]) {
+		$login_err = "account disabled";
+		$account_disabled = true;
+	}
+
 	// Processing form data when form is submitted
-	if($_SERVER["REQUEST_METHOD"] == "POST") {
+	if(($_SERVER["REQUEST_METHOD"] == "POST") && !$account_disabled) {
 
 		// Check if username is empty
 		if (empty(trim($_POST["username"]))) {
@@ -42,7 +49,7 @@
 		// Validate credentials
 		if (empty($username_err) && empty($password_err)) {
 			// Prepare a select statement
-			$sql = "SELECT id, username, password, permlevel FROM users WHERE username = ?";
+			$sql = "SELECT id, username, password, permlevel, disabled FROM users WHERE username = ?";
 
 			if ($stmt = mysqli_prepare($link, $sql)) {
 				// Bind variables to the prepared statement as parameters
@@ -59,25 +66,31 @@
 					// Check if username exists, if yes then verify password
 					if (mysqli_stmt_num_rows($stmt) == 1) {
 						// Bind result variables
-						mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password, $permlevel);
+						mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password, $permlevel, $disabled);
 						
 						if (mysqli_stmt_fetch($stmt)) {
-							if (password_verify($password, $hashed_password)) {
-								// Password is correct, so start a new session
+							if ($disabled == 1) {
+								$login_err = "Account disabled";
 								session_start();
-
-								// Store data in session variables
-								$_SESSION["loggedin"] = true;
-								$_SESSION["id"] = $id;
-								$_SESSION["username"] = $username;
-								$_SESSION["permlevel"] = $permlevel;
-
-								// Redirect user to main page
-								header("location: $redirect");
+								$_SESSION["accountdisabled"] = true;
 							} else {
-								// Password is not valid, display a generic error message
-								$login_err = "Invalid username or password.";
-								$invalid_password = true;
+								if (password_verify($password, $hashed_password)) {
+									// Password is correct, so start a new session
+									session_start();
+	
+									// Store data in session variables
+									$_SESSION["loggedin"] = true;
+									$_SESSION["id"] = $id;
+									$_SESSION["username"] = $username;
+									$_SESSION["permlevel"] = $permlevel;
+	
+									// Redirect user to main page
+									header("location: $redirect");
+								} else {
+									// Password is not valid, display a generic error message
+									$login_err = "Invalid username or password.";
+									$invalid_password = true;
+								}
 							}
 						}
 					} else {
@@ -94,8 +107,15 @@
 		}
 
 		if ($invalid_password) {
+			session_start();
+			if (!isset($_SESSION["numattempts"])) {
+				$_SESSION["numattempts"] = 1;
+			} else {
+				$_SESSION["numattempts"] += 1;
+			}
+			$num_attempts = $_SESSION["numattempts"];
 			$address = $_SERVER['REMOTE_ADDR'];
-			$sql = "INSERT INTO loginattempts (ip, username) VALUES ('$address', '$username')"; // VALUES (?, ?)";
+			$sql = "INSERT INTO loginattempts (ip, username, attempt_num) VALUES ('$address', '$username', '$num_attempts')"; // VALUES (?, ?)";
 			// echo "Test";
 
 			if ($stmt = mysqli_prepare($link, $sql)) {
@@ -107,6 +127,7 @@
 				// Set parameters
 				$param_ip = $address;
 				$param_username = $username;
+				$param_attempt_num = $num_attempts;
 
 				// Attempt to execute the prepared statement
 				if (mysqli_stmt_execute($stmt)) {
