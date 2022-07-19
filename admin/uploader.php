@@ -29,12 +29,14 @@
 		// Skipping the check to check if an image is fake
 
 		if (file_exists($target_file)) {
+			$message = "Sorry, file already exists.";
 			echo "Sorry, file already exists.";
 			$uploadOk = 0;
 		}
 
 		// Check file size
 		if ($_FILES["file"]["size"] > 5000000) {
+			$message = "Sorry, your file is too large.";
 			echo "Sorry, your file is too large.";
 			$uploadOk = 0;
 		}
@@ -43,12 +45,15 @@
 
 		// Check if $uploadOk is set to 0 by an error
 		if ($uploadOk == 0) {
+			$message = "Sorry, there was a problem with your upload... Please try again later...";
 			echo "Sorry, there was a problem with your upload... Please try again later...";
 			// If everything is ok, try to upload file
 		} else {
 			if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+				$message = "The file " . htmlspecialchars( basename( $_FILES["file"]["name"])) . " has been uploaded";
 				echo "The file " . htmlspecialchars( basename( $_FILES["file"]["name"])) . " has been uploaded";
 			} else {
+				$message = "Sorry, there was a problem uploading your file... Please try again later...";
 				echo "Sorry, there was a problem uploading your file... Please try again later...";
 			}
 		}
