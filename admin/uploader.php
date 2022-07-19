@@ -45,7 +45,7 @@
 
 		// Check if $uploadOk is set to 0 by an error
 		if ($uploadOk == 0) {
-			$message = "Sorry, there was a problem with your upload... Please try again later...";
+			//$message = "Sorry, there was a problem with your upload... Please try again later...";
 			echo "Sorry, there was a problem with your upload... Please try again later...";
 			// If everything is ok, try to upload file
 		} else {
