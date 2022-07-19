@@ -49,7 +49,7 @@
 .menu {
 	display: grid;
 	row-gap: 50px;
-	grid-template-columns: max-content auto;
+	grid-template-columns: auto auto;
 }
 
 /* Colors */

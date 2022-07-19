@@ -23,8 +23,8 @@
 				<div class="menu">
 					<h3>Meals</h3> <p>Prices</p>
 					<p>Get a Brat or Burger, chips and a drink</p> <p>$5</p>
-					<hr>
-					<h3 style="grid-column: 1 / 2;">Seperately Sold Items</h3>
+					<hr style="grid-column: 1 / span 2; width: 100%;">
+					<h3>Seperately Sold Items</h3> <p></p>
 					<p>Brat</p> 			<p>$3.50</p>
 					<p>Burger</p> 			<p>$4.00</p>
 					<p>Cheese</p> 			<p>$.50 extra</p>
