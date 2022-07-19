@@ -1,6 +1,15 @@
 <?php
 	$redirect = "/login/login.php?redirect=/admin/upload.php";
 	require("../logincheck.php");
+
+	function show_alert($message) {
+		// Display the alert box
+		echo "<script>alert('$message');</script>";
+	}
+
+	$mes = htmlspecialchars($_GET["message"]);
+
+	show_alert($mes);
 ?>
 
 <!DOCTYPE html>

@@ -7,11 +7,6 @@
 ?>
 
 <?php
-	function show_alert($message) {
-		// Display the alert box
-		echo "<script>alert('$message');</script>";
-	}
-
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$morephotos = isset($_POST["morephotos"]);
 		chdir("../morephotos/");
@@ -34,14 +29,12 @@
 		// Skipping the check to check if an image is fake
 
 		if (file_exists($target_file)) {
-			show_alert("Sorry, file already exists.");
 			echo "Sorry, file already exists.";
 			$uploadOk = 0;
 		}
 
 		// Check file size
 		if ($_FILES["file"]["size"] > 5000000) {
-			show_alert("Sorry, your file is too large.");
 			echo "Sorry, your file is too large.";
 			$uploadOk = 0;
 		}
@@ -50,21 +43,18 @@
 
 		// Check if $uploadOk is set to 0 by an error
 		if ($uploadOk == 0) {
-			show_alert("Sorry, there was a problem with your upload... Please try again later...");
 			echo "Sorry, there was a problem with your upload... Please try again later...";
 			// If everything is ok, try to upload file
 		} else {
 			if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-				show_alert("The file " . htmlspecialchars( basename( $_FILES["file"]["name"])) . " has been uploaded");
 				echo "The file " . htmlspecialchars( basename( $_FILES["file"]["name"])) . " has been uploaded";
 			} else {
-				show_alert("Sorry, there was a problem uploading your file... Please try again later...");
 				echo "Sorry, there was a problem uploading your file... Please try again later...";
 			}
 		}
 	}
 
 	sleep(1);
-	header("location: upload.php");
+	header("location: upload.php?message=$message");
 	exit;
 ?>
