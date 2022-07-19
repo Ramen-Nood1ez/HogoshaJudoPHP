@@ -128,10 +128,15 @@
 						session_start();
 						$addr = $_SERVER['REMOTE_ADDR'];
 
+						$months = ["January", "Febuary", "March", 
+							"April", "May", "June", "July", "August", 
+							"September", "October", "November", "December"];
+
 						$msg = "<html><head><title>Login Alert</title>";
 						$msg .= "</head><body>";
 						$msg .= "Someone under the ip, <b>$addr</b>, attempted ";
-						$msg .= "to login but failed 3 times." . "\r\n";
+						$msg .= "to login but failed 3 times, on ";
+						$msg .= date("l, F jS, Y") . " at " . date("g:i:s A") . "."  . "\r\n";
 						$msg .= "The account, <b>$username</b>, has been disabled ";
 						$msg .= "and the ip address has been logged." . "\r\n";
 						$msg .= "</body></html>";
