@@ -83,6 +83,7 @@
 									$_SESSION["id"] = $id;
 									$_SESSION["username"] = $username;
 									$_SESSION["permlevel"] = $permlevel;
+									unset($_SESSION["numattempts"]);
 	
 									// Redirect user to main page
 									header("location: $redirect");
@@ -114,32 +115,69 @@
 				$_SESSION["numattempts"] += 1;
 			}
 			$num_attempts = $_SESSION["numattempts"];
-			$address = $_SERVER['REMOTE_ADDR'];
-			$sql = "INSERT INTO loginattempts (ip, username, attempt_num) VALUES ('$address', '$username', '$num_attempts')"; // VALUES (?, ?)";
-			// echo "Test";
 
-			if ($stmt = mysqli_prepare($link, $sql)) {
-				// echo "prepare\n";
-				// Bind variables to the prepared statement as parameters
-				mysqli_stmt_bind_param($stmt, "ss", $param_ip, $param_username);
-				// echo "bind\n";
+			if ($num_attempts >= 3) {
+				$sql = "UPDATE users SET disabled = 1 WHERE username='$username'"; // VALUES (?, ?)";
+				// echo "Test";
 
-				// Set parameters
-				$param_ip = $address;
-				$param_username = $username;
-				$param_attempt_num = $num_attempts;
+				if ($stmt = mysqli_prepare($link, $sql)) {
+					// echo "prepare\n";
+					// Bind variables to the prepared statement as parameters
+					mysqli_stmt_bind_param($stmt, "is", $param_disabled, $param_username);
+					// echo "bind\n";
 
-				// Attempt to execute the prepared statement
-				if (mysqli_stmt_execute($stmt)) {
-					echo "Attempt Logged!";
+					// Set parameters
+					$param_disabled = 1;
+					$param_username = $username;
+
+					// Attempt to execute the prepared statement
+					if (mysqli_stmt_execute($stmt)) {
+						echo "Account Disabled because of 3 failed attempts!";
+						session_start();
+						$_SESSION["accountdisabled"] = true;
+
+						$msg = "Someone with the ip address of ($address) attempted ";
+						$msg .= "to login with a valid username ($username), but incorrect ";
+						$msg .= "password 3 (or more) times. The account has been disabled.";
+
+						mail("cookiejar@hogoshajudo.org", "Failed Login Attempt", wordwrap($msg));
+					} else {
+						echo "Oops! Something went wrong...";
+					}
 				} else {
-					echo "Oops! Something went wrong...";
+					// echo "$address";
+					echo "prepare failed!";
 				}
 
-				mysqli_stmt_close($stmt);
+					mysqli_stmt_close($stmt);
 			} else {
-				// echo "$address";
-				echo "prepare failed!";
+				$address = $_SERVER['REMOTE_ADDR'];
+				$sql = "INSERT INTO loginattempts (ip, username, attempt_num) VALUES ('$address', '$username', '$num_attempts')"; // VALUES (?, ?)";
+				// echo "Test";
+
+				if ($stmt = mysqli_prepare($link, $sql)) {
+					// echo "prepare\n";
+					// Bind variables to the prepared statement as parameters
+					mysqli_stmt_bind_param($stmt, "ss", $param_ip, $param_username);
+					// echo "bind\n";
+
+					// Set parameters
+					$param_ip = $address;
+					$param_username = $username;
+					$param_attempt_num = $num_attempts;
+
+					// Attempt to execute the prepared statement
+					if (mysqli_stmt_execute($stmt)) {
+						echo "Attempt Logged!";
+					} else {
+						echo "Oops! Something went wrong...";
+					}
+
+					mysqli_stmt_close($stmt);
+				} else {
+					// echo "$address";
+					echo "prepare failed!";
+				}
 			}
 		}
 
@@ -199,7 +237,5 @@
 			</form>
 		</section>
 	</div>
-	
-
 </body>
 </html>
