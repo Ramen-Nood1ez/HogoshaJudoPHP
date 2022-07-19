@@ -14,11 +14,7 @@
 	?>
 	<?php 
 		session_start();
-
-		if (!isset($_COOKIE["hasvisited"]) || $_COOKIE["hasvisited"] == false) {
-			setcookie("hasvisited", false, [time() + 600, "/"]);
-			include("visitor.php");
-		}
+		include("visitor.php");
 	?>
 	<a href="" onclick="ToggleDarkMode()">Toggle Dark Mode</a>
 	<a href="#" onclick="toggleTopNav()" class="icon">☰</a>

@@ -1,9 +1,6 @@
 <?php 
 	session_start();
 
-	if ($_COOKIE["hasvisited"] == true) {
-		exit;
-	}
 	// echo $_SERVER['REMOTE_ADDR'] . "\n";
 
 	require_once("./login/config.php");
