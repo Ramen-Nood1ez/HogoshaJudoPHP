@@ -138,16 +138,16 @@
 						$addr = $_SERVER['REMOTE_ADDR'];
 
 						$msg = "<html><head><title>Login Alert</title>";
-						$msg .= "<link rel='stylesheet' href='https://hogoshajudo.org/public/newstyle.css'";
 						$msg .= "</head><body>";
-						$msg .= "Someone with the ip address of <b>($addr)</b> attempted ";
-						$msg .= "to login with a valid username <b>($username)</b>, but incorrect ";
-						$msg .= "password 3 times. The account has been disabled.";
+						$msg .= "Someone under the ip, <b>$addr</b>, attempted ";
+						$msg .= "to login but failed 3 times." . "\r\n";
+						$msg .= "The account, <b>$username</b>, has been disabled. ";
+						$msg .= "And the ip address has been logged." . "\r\n";
 						$msg .= "</body></html>";
 						
 						$headers = "MIME-Version: 1.0" . "\r\n";
 						$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-						$headers .= "From: loginalerts@hogoshajudo.org" . "\r\n";
+						$headers .= "From: loginalerts-noreply@hogoshajudo.org" . "\r\n";
 
 						mail("cookiejar@hogoshajudo.org", "Failed Login Attempt", wordwrap($msg), $headers);
 					} else {
