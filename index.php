@@ -57,7 +57,7 @@
 
 				<br>
 
-				<div class="parallax" style="background-image: url('images/mainjudopage3.jpg')"></div>
+				<div class="parallax" style="background-image: url('images/mainjudopage4.jpg')"></div>
 
 				<h1>Operating Hours:</h1>
 				
