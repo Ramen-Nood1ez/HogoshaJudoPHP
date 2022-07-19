@@ -9,7 +9,9 @@
 
 	$mes = htmlspecialchars($_GET["message"]);
 
-	show_alert($mes);
+	if (!empty(trim($mes))) { 
+		show_alert($mes);
+	}
 ?>
 
 <!DOCTYPE html>
