@@ -346,6 +346,7 @@ p.center-text {
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: 100%;
+		background-position-y: -150px;
 	}
 	.container {
 		display: flex;
