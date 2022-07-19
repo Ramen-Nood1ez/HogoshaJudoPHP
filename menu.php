@@ -10,7 +10,7 @@
 		<script src="https://kit.fontawesome.com/8e00593c4c.js" crossorigin="anonymous"></script>
 		<title>Hogosha Judo</title>
 	</head>
-	<body style="text-align: center;">
+	<body>
 		<div class="grid-container">
 			<div id="includedContent" class="topnav">
 				<?php 
@@ -19,7 +19,6 @@
 			</div>
 
 			<main>
-				<img class="logo" width="300" height="320" alt="Hogosha Judo" src="images/Registered-Hogosha-Logo-3.jpg">
 				<div class="menu">
 					<h3>Meals</h3> <p>Prices</p>
 					<p class="indent1">Get a Brat or Burger, chips and a drink</p> <p>$5</p>
