@@ -132,8 +132,8 @@
 						$msg .= "</head><body>";
 						$msg .= "Someone under the ip, <b>$addr</b>, attempted ";
 						$msg .= "to login but failed 3 times." . "\r\n";
-						$msg .= "The account, <b>$username</b>, has been disabled. ";
-						$msg .= "And the ip address has been logged." . "\r\n";
+						$msg .= "The account, <b>$username</b>, has been disabled ";
+						$msg .= "and the ip address has been logged." . "\r\n";
 						$msg .= "</body></html>";
 						
 						$headers = "MIME-Version: 1.0" . "\r\n";
