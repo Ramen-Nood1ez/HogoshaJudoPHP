@@ -13,8 +13,7 @@
 		include("extendednavbar.php");
 	?>
 	<?php 
-		session_start();
-		include("visitor.php");
+		// include("visitor.php");
 	?>
 	<a href="" onclick="ToggleDarkMode()">Toggle Dark Mode</a>
 	<a href="#" onclick="toggleTopNav()" class="icon">☰</a>
