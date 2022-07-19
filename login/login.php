@@ -37,6 +37,8 @@
 			$password = trim($_POST["password"]);
 		}
 
+		$invalid_password = false;
+
 		// Validate credentials
 		if (empty($username_err) && empty($password_err)) {
 			// Prepare a select statement
@@ -75,6 +77,7 @@
 							} else {
 								// Password is not valid, display a generic error message
 								$login_err = "Invalid username or password.";
+								$invalid_password = true;
 							}
 						}
 					} else {
@@ -87,6 +90,35 @@
 
 				// Close statement
 				mysqli_stmt_close($stmt);
+			}
+		}
+
+		if ($invalid_password) {
+			$address = $_SERVER['REMOTE_ADDR'];
+			$sql = "INSERT INTO loginattempts (ip, username) VALUES ('$address', '$username')"; // VALUES (?, ?)";
+			// echo "Test";
+
+			if ($stmt = mysqli_prepare($link, $sql)) {
+				// echo "prepare\n";
+				// Bind variables to the prepared statement as parameters
+				mysqli_stmt_bind_param($stmt, "ss", $param_ip, $param_username);
+				// echo "bind\n";
+
+				// Set parameters
+				$param_ip = $address;
+				$param_username = $username;
+
+				// Attempt to execute the prepared statement
+				if (mysqli_stmt_execute($stmt)) {
+					echo "Attempt Logged!";
+				} else {
+					echo "Oops! Something went wrong...";
+				}
+
+				mysqli_stmt_close($stmt);
+			} else {
+				// echo "$address";
+				echo "prepare failed!";
 			}
 		}
 

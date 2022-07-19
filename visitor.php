@@ -3,7 +3,7 @@
 
 	// echo $_SERVER['REMOTE_ADDR'] . "\n";
 
-	require_once("./login/config.php");
+	require("./login/config.php");
 
 
 	$address = $_SERVER['REMOTE_ADDR'];

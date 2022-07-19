@@ -64,7 +64,6 @@
 		}
 	}
 
-	sleep(1);
 	header("location: upload.php?message=$message");
 	exit;
 ?>
