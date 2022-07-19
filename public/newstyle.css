@@ -466,5 +466,6 @@ p.center-text {
 	.menu {
 		display: grid;
 		grid-template-columns: auto auto;
+		column-gap: 20px;
 	}
 }
