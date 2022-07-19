@@ -22,15 +22,15 @@
 				<img class="logo" width="300" height="320" alt="Hogosha Judo" src="images/Registered-Hogosha-Logo-3.jpg">
 				<div class="menu">
 					<h3>Meals</h3> <p>Prices</p>
-					<p>Get a Brat or Burger, chips and a drink</p> <p>$5</p>
+					<p class="indent1">Get a Brat or Burger, chips and a drink</p> <p>$5</p>
 					<!--hr style="grid-column: 1 / span 2; width: 100%;"-->
 					<h3>Seperately Sold Items</h3> <p></p>
-					<p>Brat</p> 			<p>$3.50</p>
-					<p>Burger</p> 			<p>$4.00</p>
-					<p class="indent">Cheese</p> 			<p>$.50 extra</p>
-					<p>Chips</p> 			<p>$1.00</p>
-					<p>Water or Soda</p> 	<p>$1.00</p>
-					<p>Gatorade</p> 		<p>$1.50</p>
+					<p class="indent1">Brat</p> 			<p>$3.50</p>
+					<p class="indent1">Burger</p> 			<p>$4.00</p>
+					<p class="indent2">Cheese</p> 			<p>$.50 extra</p>
+					<p class="indent1">Chips</p> 			<p>$1.00</p>
+					<p class="indent1">Water or Soda</p> 	<p>$1.00</p>
+					<p class="indent1">Gatorade</p> 		<p>$1.50</p>
 				</div>
 			</main>
 	</body>
