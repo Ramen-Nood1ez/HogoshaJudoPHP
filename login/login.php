@@ -23,7 +23,7 @@
 	$account_disabled = false;
 
 	if (isset($_SESSION["accountdisabled"]) && $_SESSION["accountdisabled"]) {
-		$login_err = "account disabled";
+		$login_err = "Account Disabled. Your attempts have been logged.";
 		$account_disabled = true;
 	}
 
