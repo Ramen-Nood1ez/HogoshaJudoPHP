@@ -135,10 +135,19 @@
 						echo "Account Disabled because of 3 failed attempts!";
 						session_start();
 						$_SESSION["accountdisabled"] = true;
+						$addr = $_SERVER['REMOTE_ADDR'];
 
-						$msg = "Someone with the ip address of ($address) attempted ";
-						$msg .= "to login with a valid username ($username), but incorrect ";
-						$msg .= "password 3 (or more) times. The account has been disabled.";
+						$msg = "<html><head><title>Login Alert</title>";
+						$msg .= "<link rel='stylesheet' href='https://hogoshajudo.org/public/newstyle.css'";
+						$msg .= "</head><body>";
+						$msg .= "Someone with the ip address of <b>($addr)</b> attempted ";
+						$msg .= "to login with a valid username <b>($username)</b>, but incorrect ";
+						$msg .= "password 3 times. The account has been disabled.";
+						$msg .= "</body></html>";
+						
+						$headers = "MIME-Version: 1.0" . "\r\n";
+						$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+						$headers .= "From: loginalerts@hogoshajudo.org" . "\r\n";
 
 						mail("cookiejar@hogoshajudo.org", "Failed Login Attempt", wordwrap($msg));
 					} else {
