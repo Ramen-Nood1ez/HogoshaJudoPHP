@@ -149,7 +149,7 @@
 						$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 						$headers .= "From: loginalerts@hogoshajudo.org" . "\r\n";
 
-						mail("cookiejar@hogoshajudo.org", "Failed Login Attempt", wordwrap($msg));
+						mail("cookiejar@hogoshajudo.org", "Failed Login Attempt", wordwrap($msg), $headers);
 					} else {
 						echo "Oops! Something went wrong...";
 					}
