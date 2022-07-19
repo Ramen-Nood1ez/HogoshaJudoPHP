@@ -20,15 +20,8 @@
 	$permlevel = 0;
 	$username_err = $password_err = $login_err = "";
 
-	$account_disabled = false;
-
-	if (isset($_SESSION["accountdisabled"]) && $_SESSION["accountdisabled"]) {
-		$login_err = "Account Disabled. Your attempts have been logged.";
-		$account_disabled = true;
-	}
-
 	// Processing form data when form is submitted
-	if(($_SERVER["REQUEST_METHOD"] == "POST") && !$account_disabled) {
+	if(($_SERVER["REQUEST_METHOD"] == "POST")) {
 
 		// Check if username is empty
 		if (empty(trim($_POST["username"]))) {
@@ -70,9 +63,8 @@
 						
 						if (mysqli_stmt_fetch($stmt)) {
 							if ($disabled == 1) {
-								$login_err = "Account disabled";
+								$login_err = "Account Disabled. Your attempts have been logged.";;
 								session_start();
-								$_SESSION["accountdisabled"] = true;
 							} else {
 								if (password_verify($password, $hashed_password)) {
 									// Password is correct, so start a new session
@@ -134,7 +126,6 @@
 					if (mysqli_stmt_execute($stmt)) {
 						echo "Account Disabled because of 3 failed attempts!";
 						session_start();
-						$_SESSION["accountdisabled"] = true;
 						$addr = $_SERVER['REMOTE_ADDR'];
 
 						$msg = "<html><head><title>Login Alert</title>";
