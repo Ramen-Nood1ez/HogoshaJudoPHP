@@ -7,6 +7,11 @@
 ?>
 
 <?php
+	define('KB', 1024);
+	define('MB', 1048576);
+	define('GB', 1073741824);
+	define('TB', 1099511627776);
+
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$morephotos = isset($_POST["morephotos"]);
 		chdir("../morephotos/");
@@ -35,7 +40,7 @@
 		}
 
 		// Check file size
-		if ($_FILES["file"]["size"] > 5000000) {
+		if ($_FILES["file"]["size"] > 20*MB) {
 			$message = "Sorry, your file is too large.";
 			echo "Sorry, your file is too large.";
 			$uploadOk = 0;
