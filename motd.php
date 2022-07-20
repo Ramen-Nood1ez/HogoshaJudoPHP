@@ -88,7 +88,7 @@
 
 					echo "</div>\n";
 				} else {
-					echo "Fetch went wrong!";
+					// echo "Fetch went wrong!";
 				}
 			} else {
 				echo "Oops! Something went wrong. Please try again later.";
