@@ -144,8 +144,8 @@
 
 			<main>
 				<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-					<label for="cid">Creator ID</label>
-					<input type="number" name="cid" min="0" max="2">
+					<label for="creator_id">Creator ID</label>
+					<input type="number" name="creator_id" min="0" max="2">
 					<br>
 					<label for="title">Title</label>
 					<input type="text" name="title">
