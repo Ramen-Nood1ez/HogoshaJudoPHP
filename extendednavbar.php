@@ -7,6 +7,9 @@
 
 		if ($permlevel >= 3) {
 			echo "<a href='/admin/panel.php'>Admin Panel</a>";
+		} 
+		if ($permlevel == 2) {
+			echo "<a href='/admin/upload.php'>Upload an Image</a>";
 		}
 
 		echo "<a href='/login/logout.php'>Logout</a>";
