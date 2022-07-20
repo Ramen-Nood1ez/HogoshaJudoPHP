@@ -57,7 +57,7 @@
 				<div style="grid-area: row2;" class="panel-grid-row">
 					<a href="https://cpanel.hogoshajudo.org/" target="_blank">Cpanel</a>
 					<a href="https://webmail.hogoshajudo.org/" target="_blank">Webmail</a>
-					<a href="#">Unused</a>
+					<a href="https://phppasswordhash.com/" target="_blank">Online Password Hasher</a>
 					<a href="#">Unused</a>
 					<a href="#">Unused</a>
 				</div>
