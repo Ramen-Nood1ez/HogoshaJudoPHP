@@ -145,7 +145,7 @@
 			<main>
 				<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 					<label for="creator_id">Creator ID</label>
-					<input type="number" name="creator_id" min="0" max="2">
+					<input type="number" name="creator_id">
 					<br>
 					<label for="title">Title</label>
 					<input type="text" name="title">
@@ -154,7 +154,7 @@
 					<input type="text" name="desc">
 					<br>
 					<label for="announcement_type">Announcement Type</label>
-					<input type="text" name="announcement_type">
+					<input type="text" name="announcement_type" min="0" max="2">
 					<br>
 					<label for="enddate">End Date</label>
 					<input type="date" name="enddate">

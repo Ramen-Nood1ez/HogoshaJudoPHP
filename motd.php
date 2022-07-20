@@ -80,10 +80,10 @@
 				mysqli_stmt_bind_result($stmt, $message, $show_date);
 				
 				if (mysqli_stmt_fetch($stmt)) {
-					echo "ID: $id, Message: $message, Show Date: $show_date";
+					// echo "ID: $id, Message: $message, Show Date: $show_date";
 					echo "<div class='announcement-panel'>\n";
 
-					echo "<h2>MOTD</h2>\n";
+					echo "<h2><b>MOTD</b></h2>\n";
 					echo "<p>" . $message . "</p>";
 
 					echo "</div>\n";
@@ -128,19 +128,13 @@
 			<main>
 				<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 					<label for="creator_id">Creator ID</label>
-					<input type="number" name="creator_id" min="0" max="2">
+					<input type="number" name="creator_id">
 					<br>
-					<label for="title">Title</label>
-					<input type="text" name="title">
+					<label for="message">Message</label>
+					<input type="text" name="message">
 					<br>
-					<label for="desc">Description</label>
-					<input type="text" name="desc">
-					<br>
-					<label for="announcement_type">Announcement Type</label>
-					<input type="text" name="announcement_type">
-					<br>
-					<label for="enddate">End Date</label>
-					<input type="date" name="enddate">
+					<label for="show_date">Show Date</label>
+					<input type="date" name="show_date" min="<?php echo date("Y-m-d"); ?>">
 					<br>
 					<input type="submit" value="Submit">
 				</form>
