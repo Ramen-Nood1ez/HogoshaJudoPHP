@@ -146,12 +146,19 @@
 				<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 					<label for="cid">Creator ID</label>
 					<input type="number" name="cid" min="0" max="2">
+					<br>
 					<label for="title">Title</label>
 					<input type="text" name="title">
+					<br>
 					<label for="desc">Description</label>
 					<input type="text" name="desc">
+					<br>
+					<label for="announcement_type">Announcement Type</label>
+					<input type="text" name="announcement_type">
+					<br>
 					<label for="enddate">End Date</label>
 					<input type="date" name="enddate">
+					<br>
 					<input type="submit" value="Submit">
 				</form>
 			</main>
