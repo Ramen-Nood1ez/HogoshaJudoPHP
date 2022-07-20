@@ -65,6 +65,7 @@
 	if (!isset($_GET["create"])) {
 		$message = "";
 		$show_date = $current_date;
+		$id = 0;
 
 		// echo $end_date;
 
