@@ -12,6 +12,10 @@
 			echo "<a href='/admin/upload.php'>Upload an Image</a>";
 		}
 
+		$user = $_SESSION["username"];
+
+		echo "Logged in as: $user";
+
 		echo "<a href='/login/logout.php'>Logout</a>";
 	} else {
 		echo "<a href='/login/login.php'>Login</a>";
