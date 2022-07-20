@@ -51,6 +51,7 @@
 			// Attempt to execute the prepared statement
 			if (mysqli_stmt_execute($stmt)) {
 				echo "Success!";
+				header("location: /");
 			} else {
 				echo "Oops! Something went wrong...";
 			}

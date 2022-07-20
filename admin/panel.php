@@ -48,8 +48,8 @@
 				<h2 style="grid-area: headone;">Utilities</h2>
 				<div style="grid-area: row1;" class="panel-grid-row">
 					<a href="upload.php">Upload an image/video</a>
-					<a href="/announcement.php">Make an announcement</a>
-					<a href="motd.php">Change the MOTD</a>
+					<a href="/announcement.php?create">Make an announcement</a>
+					<a href="/motd.php?create">Change the MOTD</a>
 					<a href="#">Unused</a>
 					<a href="#">Unused</a>
 				</div>
