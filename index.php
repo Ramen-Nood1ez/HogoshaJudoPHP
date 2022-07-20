@@ -30,10 +30,6 @@
 					include("announcement.php");
 				?>
 
-				<?php 
-					include("motd.php");
-				?>
-
 				<img class="logo" width="300" height="320" alt="Hogosha Judo" src="images/Registered-Hogosha-Logo-3.jpg">
 
 				<br>
@@ -51,6 +47,12 @@
 
 				<br>
 				<br>
+				<br>
+
+				<?php 
+					include("motd.php");
+				?>
+
 				<br>
 
 				<div id="Announcements">
