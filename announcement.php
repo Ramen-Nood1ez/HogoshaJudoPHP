@@ -13,9 +13,9 @@
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$creator_id = -1;
 		$title = "";
-		$description = "";
+		$description = empty(trim($_POST["desc"])) ? "NULL" : htmlspecialchars($_POST["desc"]);
 		$announcement_type = 0;
-		$end_date = $current_date;
+		$end_date = empty(trim($_POST["enddate"])) ? "NULL" : htmlspecialchars($_POST["enddate"]);
 
 		require("logincheck.php");
 
@@ -32,6 +32,34 @@
 		}
 
 		$announcement_type = empty(trim($_POST["announcement_type"])) ? 0 : $_POST["announcement_type"];
+
+		$sql = "INSERT INTO announcements (creator, title, description, type, end_date) ";
+		$sql .= "VALUES ('$creator_id', '$title', '$description', '$announcement_type', '$end_date')";
+		// echo "Test";
+
+		if ($stmt = mysqli_prepare($link, $sql)) {
+			// echo "prepare\n";
+			// Bind variables to the prepared statement as parameters
+			mysqli_stmt_bind_param($stmt, "ss", $param_ip, $param_username);
+			// echo "bind\n";
+
+			// Set parameters
+			$param_ip = $address;
+			$param_username = $username;
+			$param_attempt_num = $num_attempts;
+
+			// Attempt to execute the prepared statement
+			if (mysqli_stmt_execute($stmt)) {
+				echo "Success!";
+			} else {
+				echo "Oops! Something went wrong...";
+			}
+
+			mysqli_stmt_close($stmt);
+		} else {
+			// echo "$address";
+			echo "prepare failed!";
+		}
 	}
 
 	if (!isset($_GET["create"])) {
@@ -91,6 +119,7 @@
 		mysqli_close($link);
 		exit;
 	}
+	mysqli_close($link);
 ?>
 
 <!DOCTYPE html>
@@ -114,7 +143,7 @@
 			</div>
 
 			<main>
-				<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+				<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 					<label for="cid">Creator ID</label>
 					<input type="number" name="cid" min="0" max="2">
 					<label for="title">Title</label>
