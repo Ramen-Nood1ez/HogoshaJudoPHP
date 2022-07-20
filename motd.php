@@ -127,10 +127,10 @@
 			</div>
 
 			<main>
-				<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-					<label for="creator_id">Creator ID</label>
-					<input type="number" name="creator_id" 
-						value="<?php session_start(); echo $_SESSION['id']; ?>">
+				<form class="announcement-panel" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+					<!--label for="creator_id">Creator ID</!--label-->
+					<input type="text" name="creator_id" 
+						value="<?php session_start(); echo $_SESSION['id']; ?>" readonly hidden>
 					<br>
 					<label for="message">Message</label>
 					<input type="text" name="message">
