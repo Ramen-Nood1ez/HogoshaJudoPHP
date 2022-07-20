@@ -128,10 +128,6 @@
 						session_start();
 						$addr = $_SERVER['REMOTE_ADDR'];
 
-						$months = ["January", "Febuary", "March", 
-							"April", "May", "June", "July", "August", 
-							"September", "October", "November", "December"];
-
 						$msg = "<html><head><title>Login Alert</title>";
 						$msg .= "</head><body>";
 						$msg .= "Someone under the ip, <b>$addr</b>, attempted ";
