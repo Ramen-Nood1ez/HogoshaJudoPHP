@@ -2,6 +2,12 @@
 	$redirect = "/login/login.php?redirect=/admin/upload.php";
 	require("../logincheck.php");
 
+	session_start();
+	if (!isset($_SESSION["permlevel"]) || $_SESSION["permlevel"] < 2) {
+		echo "You don't have permission to access this page...";
+		exit;
+	}
+
 	function show_alert($message) {
 		// Display the alert box
 		echo "<script>alert('$message');</script>";
