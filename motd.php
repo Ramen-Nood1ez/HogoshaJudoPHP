@@ -78,10 +78,9 @@
 
 				// Bind result variables
 				mysqli_stmt_bind_result($stmt, $message, $show_date);
-
-				echo "ID: $id, Message: $message, Show Date: $show_date";
 				
 				if (mysqli_stmt_fetch($stmt)) {
+					echo "ID: $id, Message: $message, Show Date: $show_date";
 					echo "<div class='announcement-panel'>\n";
 
 					echo "<h2>MOTD</h2>\n";
