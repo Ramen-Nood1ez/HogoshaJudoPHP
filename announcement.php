@@ -1,5 +1,5 @@
 <?php 
-	require_once("./login/config.php");
+	require("./login/config.php");
 	/* Post Parameters
 	*  creator id 
 	*  title
