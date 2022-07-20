@@ -80,14 +80,12 @@
 				mysqli_stmt_bind_result($stmt, $id, $message, $show_date);
 				
 				if (mysqli_stmt_fetch($stmt)) {
-					if ((strtotime($current_date) <= strtotime($end_date)) || empty(trim($end_date))) {
-						echo "<div class='announcement-panel'>\n";
+					echo "<div class='announcement-panel'>\n";
 
-						echo "<h2>MOTD</h2>\n";
-						echo "<p>" . $message . "</p>";
+					echo "<h2>MOTD</h2>\n";
+					echo "<p>" . $message . "</p>";
 
-						echo "</div>\n";
-					}
+					echo "</div>\n";
 				} else {
 					echo "Fetch went wrong!";
 				}
