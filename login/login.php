@@ -132,7 +132,7 @@
 						$msg .= "</head><body>";
 						$msg .= "Someone under the ip, <b>$addr</b>, attempted ";
 						$msg .= "to login but failed 3 times, on ";
-						$msg .= date("l, F jS, Y") . " at " . date("g:i:s A") . "."  . "\r\n";
+						$msg .= date("l, F jS") . " at " . date("g:i a") . "."  . "\r\n";
 						$msg .= "The account, <b>$username</b>, has been disabled ";
 						$msg .= "and the ip address has been logged." . "\r\n";
 						$msg .= "</body></html>";
