@@ -117,7 +117,7 @@
 
 		// Close connection
 		mysqli_close($link);
-		exit;
+		return;
 	}
 	mysqli_close($link);
 ?>
