@@ -68,7 +68,7 @@
 
 		// echo $end_date;
 
-		$sql = "SELECT message, show_date FROM motd WHERE show_date=$current_date";
+		$sql = "SELECT message, show_date FROM motd WHERE id=1";//show_date=$current_date";
 
 		if ($stmt = mysqli_prepare($link, $sql)) {
 			// Attempt to execute prepared statement
