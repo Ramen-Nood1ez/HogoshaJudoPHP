@@ -65,11 +65,10 @@
 	if (!isset($_GET["create"])) {
 		$message = "";
 		$show_date = $current_date;
-		$id = 0;
 
 		// echo $end_date;
 
-		$sql = "SELECT id, message, show_date FROM motd WHERE show_date=$current_date";
+		$sql = "SELECT message, show_date FROM motd WHERE show_date=$current_date";
 
 		if ($stmt = mysqli_prepare($link, $sql)) {
 			// Attempt to execute prepared statement
@@ -78,7 +77,7 @@
 				mysqli_stmt_store_result($stmt);
 
 				// Bind result variables
-				mysqli_stmt_bind_result($stmt, $id, $message, $show_date);
+				mysqli_stmt_bind_result($stmt, $message, $show_date);
 
 				echo "ID: $id, Message: $message, Show Date: $show_date";
 				
